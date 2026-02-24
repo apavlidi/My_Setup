@@ -39,6 +39,16 @@ Copy `jetbrains/keymaps/macOS copy.xml` to:
 ```
 Then in the IDE go to **Settings → Keymap** and select `macOS copy`.
 
+### 7. Claude Code
+```bash
+cp claude/settings.json ~/.claude/settings.json
+cp claude/statusline-command.sh ~/.claude/statusline-command.sh
+```
+Then install the Go language server plugin:
+```
+/plugin install gopls-lsp@claude-plugins-official
+```
+
 ## What's included
 
 | File | Description |
@@ -47,3 +57,5 @@ Then in the IDE go to **Settings → Keymap** and select `macOS copy`.
 | `zsh/.zshrc` | Zsh config with fzf, autosuggestions, zoxide, custom prompt |
 | `git/.gitconfig` | Git user config |
 | `jetbrains/keymaps/macOS copy.xml` | Custom keymap for GoLand & WebStorm |
+| `claude/settings.json` | Claude Code permissions and status line config |
+| `claude/statusline-command.sh` | Claude Code custom status line script |
