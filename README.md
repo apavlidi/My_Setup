@@ -31,6 +31,12 @@ Custom keymap for GoLand and WebStorm. Key shortcuts include:
 - `Cmd+F12` — open terminal
 - `Shift+Cmd+N` — go to file
 
+### `jetbrains/codestyles/GoogleStyle.xml`
+Google code style scheme used in GoLand. Key settings:
+- 2-space indentation (no tabs)
+- 100 character line width
+- Wrapping on method/call parameters
+
 ### `claude/settings.json`
 Claude Code global settings. Includes pre-approved shell permissions so you don't get prompted for common commands (git, go, gh, etc.), and the custom status line config.
 
@@ -76,6 +82,13 @@ Copy `jetbrains/keymaps/macOS copy.xml` to:
 ~/Library/Application Support/JetBrains/WebStorm<version>/keymaps/
 ```
 Then in the IDE go to **Settings → Keymap** and select `macOS copy`.
+
+Copy `jetbrains/codestyles/GoogleStyle.xml` to:
+```
+~/Library/Application Support/JetBrains/GoLand<version>/codestyles/
+~/Library/Application Support/JetBrains/WebStorm<version>/codestyles/
+```
+Then go to **Settings → Editor → Code Style** and select `GoogleStyle`.
 
 ### 7. Claude Code
 ```bash
