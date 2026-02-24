@@ -1,6 +1,43 @@
 # My Dev Setup
 
-Personal development environment configuration for a new Mac.
+Personal development environment configuration for a new Mac. Clone this repo and follow the steps below to get back up and running quickly.
+
+---
+
+## What's Included
+
+### `Brewfile`
+All Homebrew packages and Mac apps. Includes:
+- **Dev tools**: Git, Go, Docker, Node (nvm), Python, Ruby, Terraform, AWS CLI
+- **Terminal**: fzf (fuzzy history search), zoxide (smart cd), zsh-autosuggestions
+- **Apps**: Alfred, Rectangle, JetBrains Toolbox, GPG Suite, YubiKey Manager
+
+### `zsh/.zshrc`
+Zsh shell configuration. Includes:
+- **Oh My Zsh** with git plugin aliases (ggpush, ggpull, gst, gco, etc.)
+- **fzf** — fuzzy search through command history with Ctrl+R
+- **zsh-autosuggestions** — ghost-text command suggestions as you type
+- **zoxide** — smart directory jumping with `z <folder>`
+- **Custom prompt** — random emoji instead of the default arrow
+
+### `git/.gitconfig`
+Global git configuration. Remember to update the email after copying.
+
+### `jetbrains/keymaps/macOS copy.xml`
+Custom keymap for GoLand and WebStorm. Key shortcuts include:
+- `Cmd+J` — select next occurrence
+- `Cmd+W` — expand selection
+- `Cmd+Y` — delete line
+- `Cmd+F12` — open terminal
+- `Shift+Cmd+N` — go to file
+
+### `claude/settings.json`
+Claude Code global settings. Includes pre-approved shell permissions so you don't get prompted for common commands (git, go, gh, etc.), and the custom status line config.
+
+### `claude/statusline-command.sh`
+Custom Claude Code status line that shows the current directory and git branch (with a dirty indicator if there are uncommitted changes).
+
+---
 
 ## Restore Steps
 
@@ -30,6 +67,7 @@ touch ~/.hushlogin
 ```bash
 cp git/.gitconfig ~/.gitconfig
 ```
+Update your email in `~/.gitconfig` after copying.
 
 ### 6. JetBrains keymap (GoLand & WebStorm)
 Copy `jetbrains/keymaps/macOS copy.xml` to:
@@ -49,13 +87,7 @@ Then install the Go language server plugin:
 /plugin install gopls-lsp@claude-plugins-official
 ```
 
-## What's included
-
-| File | Description |
-|------|-------------|
-| `Brewfile` | All Homebrew packages, casks, and tools |
-| `zsh/.zshrc` | Zsh config with fzf, autosuggestions, zoxide, custom prompt |
-| `git/.gitconfig` | Git user config |
-| `jetbrains/keymaps/macOS copy.xml` | Custom keymap for GoLand & WebStorm |
-| `claude/settings.json` | Claude Code permissions and status line config |
-| `claude/statusline-command.sh` | Claude Code custom status line script |
+### 8. GitHub CLI
+```bash
+gh auth login
+```
