@@ -1,0 +1,48 @@
+<keymap version="1" name="macOS copy" parent="Mac OS X 10.5+">
+  <action id="ActivateTerminalToolWindow">
+    <keyboard-shortcut first-keystroke="meta f12" />
+  </action>
+  <action id="CloseContent" />
+  <action id="EditorDeleteLine">
+    <keyboard-shortcut first-keystroke="meta y" />
+  </action>
+  <action id="EditorSelectWord">
+    <keyboard-shortcut first-keystroke="meta w" />
+  </action>
+  <action id="EditorUnSelectWord">
+    <keyboard-shortcut first-keystroke="shift meta w" />
+  </action>
+  <action id="FileStructurePopup" />
+  <action id="GotoFile">
+    <keyboard-shortcut first-keystroke="shift meta n" />
+  </action>
+  <action id="Images.Editor.ToggleGrid" />
+  <action id="Images.Thumbnails.Hide" />
+  <action id="InsertLiveTemplate" />
+  <action id="NewScratchFile" />
+  <action id="PrevSplitter">
+    <keyboard-shortcut first-keystroke="meta back_slash" />
+  </action>
+  <action id="QuickImplementations">
+    <keyboard-shortcut first-keystroke="alt space" />
+  </action>
+  <action id="SelectAllOccurrences">
+    <keyboard-shortcut first-keystroke="shift meta j" />
+  </action>
+  <action id="SelectNextOccurrence">
+    <keyboard-shortcut first-keystroke="meta j" />
+  </action>
+  <action id="TableResult.GrowSelection">
+    <keyboard-shortcut first-keystroke="meta w" />
+  </action>
+  <action id="TableResult.ShrinkSelection">
+    <keyboard-shortcut first-keystroke="shift meta w" />
+  </action>
+  <action id="Terminal.CloseTab" />
+  <action id="Vcs.ShowTabbedFileHistory">
+    <keyboard-shortcut first-keystroke="meta quote" />
+  </action>
+  <action id="com.anthropic.code.plugin.actions.OpenClaudeInTerminalAction">
+    <keyboard-shortcut first-keystroke="meta #10000a7" />
+  </action>
+</keymap>
