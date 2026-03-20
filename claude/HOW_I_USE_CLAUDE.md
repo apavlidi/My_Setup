@@ -1,6 +1,6 @@
 # How I Use Claude Code
 
-A rough overview of how I use Claude Code for day-to-day engineering. The "state of the art" for AI tools changes every month, so this will age quickly. Credit to [Craig Ferguson's write-up](https://craigfe.notion.site/How-I-m-using-AI-for-engineering-2026-02-30369fe426d280009855db0e1a5c47a0) which heavily inspired this workflow.
+A rough overview of how I use Claude Code for day-to-day engineering. The "state of the art" for AI tools changes every month, so this will age quickly.
 
 ---
 
