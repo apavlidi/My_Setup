@@ -39,7 +39,7 @@ Google code style scheme used in GoLand. Key settings:
 - Wrapping on method/call parameters
 
 ### [`claude/`](claude/)
-[Claude Code](https://docs.anthropic.com/en/docs/claude-code) configuration including global settings, custom status line, hooks, plugins, and skills. See the [Claude Code README](claude/README.md) for full details.
+[Claude Code](https://docs.anthropic.com/en/docs/claude-code) configuration including global settings, custom status line, hooks, plugins, and skills. Also includes a write-up on [how I use Claude Code](claude/HOW_I_USE_CLAUDE.md) for day-to-day engineering. See the [Claude Code README](claude/README.md) for full details.
 
 ---
 

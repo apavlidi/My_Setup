@@ -8,6 +8,8 @@ Configuration for [Claude Code](https://docs.anthropic.com/en/docs/claude-code),
 
 Prompts are dictated via speech-to-text using [Hex](https://github.com/kitlangton/hex) rather than typed manually. Audio notifications from [Peon Ping](https://github.com/danwald/peon-ping) play character voice lines when Claude finishes a task, hits an error, or needs input — so you know when to look back at the terminal without watching it.
 
+For a deeper look at the workflow, prompting strategies, and tips, see [How I Use Claude Code](HOW_I_USE_CLAUDE.md).
+
 ---
 
 ## What's Included
