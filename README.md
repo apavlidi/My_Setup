@@ -1,29 +1,30 @@
 # My Dev Setup
 
-Personal development environment configuration for a new Mac. Clone this repo and follow the steps below to get back up and running quickly.
+Personal development environment configuration for macOS. Use it to set up a new machine or as a reference for your own setup.
 
 ---
 
 ## What's Included
 
-### `Brewfile`
-All Homebrew packages and Mac apps. Includes:
+### [`Brewfile`](Brewfile)
+All [Homebrew](https://brew.sh/) packages and Mac apps. Includes:
 - **Dev tools**: Git, Go, Docker, Node (nvm), Python, Ruby, Terraform, AWS CLI
-- **Terminal**: fzf (fuzzy history search), zoxide (smart cd), zsh-autosuggestions
-- **Apps**: Alfred, Rectangle, JetBrains Toolbox, GPG Suite, YubiKey Manager
+- **Terminal**: [fzf](https://github.com/junegunn/fzf) (fuzzy history search), [zoxide](https://github.com/ajeetdsouza/zoxide) (smart cd), [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+- **Apps**: [Alfred](https://www.alfredapp.com/), [Rectangle](https://rectangleapp.com/), [JetBrains Toolbox](https://www.jetbrains.com/toolbox-app/), GPG Suite, YubiKey Manager
+- **Speech-to-text**: [Hex](https://github.com/kitlangton/hex) for dictating prompts to Claude Code and other tools
 
-### `zsh/.zshrc`
+### [`zsh/.zshrc`](zsh/.zshrc)
 Zsh shell configuration. Includes:
-- **Oh My Zsh** with git plugin aliases (ggpush, ggpull, gst, gco, etc.)
-- **fzf** — fuzzy search through command history with Ctrl+R
-- **zsh-autosuggestions** — ghost-text command suggestions as you type
-- **zoxide** — smart directory jumping with `z <folder>`
+- **[Oh My Zsh](https://ohmyz.sh/)** with git plugin aliases (ggpush, ggpull, gst, gco, etc.)
+- **[fzf](https://github.com/junegunn/fzf)** — fuzzy search through command history with Ctrl+R
+- **[zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)** — ghost-text command suggestions as you type
+- **[zoxide](https://github.com/ajeetdsouza/zoxide)** — smart directory jumping with `z <folder>`
 - **Custom prompt** — random emoji instead of the default arrow
 
-### `git/.gitconfig`
+### [`git/.gitconfig`](git/.gitconfig)
 Global git configuration. Remember to update the email after copying.
 
-### `jetbrains/keymaps/macOS copy.xml`
+### [`jetbrains/keymaps/macOS copy.xml`](jetbrains/keymaps/macOS%20copy.xml)
 Custom keymap for GoLand and WebStorm. Key shortcuts include:
 - `Cmd+J` — select next occurrence
 - `Cmd+W` — expand selection
@@ -31,21 +32,18 @@ Custom keymap for GoLand and WebStorm. Key shortcuts include:
 - `Cmd+F12` — open terminal
 - `Shift+Cmd+N` — go to file
 
-### `jetbrains/codestyles/GoogleStyle.xml`
+### [`jetbrains/codestyles/GoogleStyle.xml`](jetbrains/codestyles/GoogleStyle.xml)
 Google code style scheme used in GoLand. Key settings:
 - 2-space indentation (no tabs)
 - 100 character line width
 - Wrapping on method/call parameters
 
-### `claude/settings.json`
-Claude Code global settings. Includes pre-approved shell permissions so you don't get prompted for common commands (git, go, gh, etc.), and the custom status line config.
-
-### `claude/statusline-command.sh`
-Custom Claude Code status line that shows the current directory and git branch (with a dirty indicator if there are uncommitted changes).
+### [`claude/`](claude/)
+[Claude Code](https://docs.anthropic.com/en/docs/claude-code) configuration including global settings, custom status line, hooks, plugins, and skills. See the [Claude Code README](claude/README.md) for full details.
 
 ---
 
-## Restore Steps
+## Setup Steps
 
 ### 1. Homebrew & packages
 ```bash
@@ -91,14 +89,7 @@ Copy `jetbrains/codestyles/GoogleStyle.xml` to:
 Then go to **Settings → Editor → Code Style** and select `GoogleStyle`.
 
 ### 7. Claude Code
-```bash
-cp claude/settings.json ~/.claude/settings.json
-cp claude/statusline-command.sh ~/.claude/statusline-command.sh
-```
-Then install the Go language server plugin:
-```
-/plugin install gopls-lsp@claude-plugins-official
-```
+See the [Claude Code README](claude/README.md) for detailed setup instructions.
 
 ### 8. GitHub CLI
 ```bash
