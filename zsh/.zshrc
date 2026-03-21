@@ -120,9 +120,6 @@ nvm()  { _nvm_load; nvm  "$@"; }
 node() { _nvm_load; node "$@"; }
 npm()  { _nvm_load; npm  "$@"; }
 npx()  { _nvm_load; npx  "$@"; }
-[ -f ${GOPATH}/src/github.com/monzo/starter-pack/zshrc ] && source $HOME/src/github.com/monzo/starter-pack/zshrc
-alias monzo='cd ~/src/github.com/monzo/worktrees/wearedev'
-
 export EDITOR=nano
 export VISUAL="$EDITOR"
 export JAVA_HOME=$(/usr/libexec/java_home -v 19)
@@ -133,43 +130,6 @@ export PATH="$ANDROID_HOME/emulator":"$ANDROID_HOME/tools":"$ANDROID_HOME/platfo
 export PATH="$HOME/go/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
-
-worktree() {
-	# This shell function is provided by Monzo's Worktree tool.
-	# It wraps the 'worktree' command to change the shell's working
-	# directory.
-	#
-	# github.com/monzo/wearedev/tools/worktree
-
-  if [[ "$1" == "path" ]] && ! [ -x "$(command -v worktree)" ]; then
-    # Worktree should be installed by Monzo Developer Tools but I
-    # imagine it's possible to depend on 'worktree path wearedev'
-    # before it's installed. This path is hard coded to the path
-    # set by the engineering onboarding scripts, and attempts to
-    # use the project argument, or "wearedev" if none is given.
-    echo "$GOPATH/src/github.com/monzo/${2:-wearedev}"
-    return $?
-  fi
-
-  case "$1" in
-    path|shell)
-      # These commands never require the tmp file so don't bother creating it.
-      # Especially a concern for the path command as it's used so frequently.
-      command worktree "$@"
-      return $?;;
-  esac
-
-  local tempfile=$(mktemp "${TMPDIR:-/tmp/}worktree.XXXXXX")
-  command worktree "$@" --tmp-output="$tempfile"
-  local exit_code=$?
-
-  if [[ $exit_code -eq 0 && -e $tempfile ]]; then
-    local worktree_path=$(command head -1 "$tempfile")
-    cd "$worktree_path"
-  fi
-
-  return $exit_code
-}
 
 # Override git_prompt_info to show git:(worktreename:branchname) when in a worktree
 function git_prompt_info() {
