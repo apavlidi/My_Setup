@@ -38,6 +38,20 @@ Custom status line script based on the [oh-my-zsh](https://ohmyz.sh/) robbyrusse
 - Git branch in red (inside blue parentheses)
 - Yellow `✗` indicator when the working tree is dirty
 
+### `skills/github-pr-review/`
+
+Skill that teaches Claude how to review GitHub PRs using the [`gh` CLI](https://cli.github.com/) — fetching diffs, submitting inline comments, and replying to review threads.
+
+### `commands/`
+
+Custom slash commands for structured workflows:
+
+| Command | Description |
+|---|---|
+| `/create-plan` | Interactive planning — research the codebase, iterate on a plan with the user, and write it to `~/.claude/plans/` |
+| `/implement-plan` | Implement an approved plan phase-by-phase, updating checkboxes as you go |
+| `/research-codebase` | Conduct parallel codebase research using sub-agents and produce a research document in `~/.claude/research/` |
+
 ---
 
 ## Additional Setup (not in this repo)
@@ -102,6 +116,8 @@ Additional permissions accumulated over time, not shipped in the repo:
 ```bash
 cp claude/settings.json ~/.claude/settings.json
 cp claude/statusline-command.sh ~/.claude/statusline-command.sh
+cp -r claude/skills/* ~/.claude/skills/
+cp -r claude/commands/* ~/.claude/commands/
 ```
 
 ### 2. Install the Go LSP plugin

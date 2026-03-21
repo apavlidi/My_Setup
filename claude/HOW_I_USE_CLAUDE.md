@@ -16,11 +16,11 @@ My approach varies depending on complexity.
 
 **Small tasks** — one or two prompts is enough. I start with something like: "Checkout a new feature branch on latest origin/master. Implement X and add corresponding tests. Raise a draft PR when you're done."
 
-**Medium tasks** — like implementing a new handler or endpoint. I prompt Claude into [plan mode](https://docs.anthropic.com/en/docs/claude-code/common-workflows#when-to-use-plan-mode) before starting implementation. I go back and forth a few times refining the plan (e.g. "needs idempotency", "skip metrics for now") before accepting it. Roughly 30% of effort goes into refining the output afterwards: renaming things, trimming unhelpful tests, removing Claude's unnecessary comments.
+**Medium tasks** — like implementing a new handler or endpoint. I use `/create-plan` to get Claude to research the codebase and build an interactive plan before writing any code. I go back and forth a few times refining the plan (e.g. "needs idempotency", "skip metrics for now") before accepting it. Once approved, `/implement-plan` executes it phase by phase. Roughly 30% of effort goes into refining the output afterwards: renaming things, trimming unhelpful tests, removing Claude's unnecessary comments.
 
 **Large tasks** — for changes too big for a single PR, I use a two-phase approach:
 
-1. **Plan and implement** the full change on a feature branch, ending up with one massive draft PR.
+1. **Plan and implement** the full change on a feature branch using `/create-plan` and `/implement-plan`, ending up with one massive draft PR.
 2. **Split the change** by prompting Claude to break it into smaller, reviewable PRs with corresponding [Linear](https://linear.app/) tickets using the `gh` CLI and the [Linear MCP server](https://linear.app/docs/mcp).
 
 This works well for getting a large feature functional end-to-end, then slicing it into mergeable units.
@@ -49,7 +49,7 @@ To avoid idle time while Claude works, I context-switch between two or three tas
 └── main            # standard checkout (read-only, for investigations)
 ```
 
-Each worktree gets its own terminal with a Claude Code session. Claude Code also has [built-in worktree support](https://docs.anthropic.com/en/docs/claude-code/common-workflows#run-parallel-claude-code-sessions-with-git-worktrees) worth exploring.
+Each worktree gets its own terminal with a Claude Code session, tiled side-by-side using [Rectangle](https://rectangleapp.com/) for window management. Claude Code also has [built-in worktree support](https://docs.anthropic.com/en/docs/claude-code/common-workflows#run-parallel-claude-code-sessions-with-git-worktrees) worth exploring.
 
 ## Audio notifications with Peon Ping
 

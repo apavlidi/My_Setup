@@ -10,7 +10,8 @@ Personal development environment configuration for macOS. Use it to set up a new
 All [Homebrew](https://brew.sh/) packages and Mac apps. Includes:
 - **Dev tools**: Git, Go, Docker, Node (nvm), Python, Ruby, Terraform, AWS CLI
 - **Terminal**: [fzf](https://github.com/junegunn/fzf) (fuzzy history search), [zoxide](https://github.com/ajeetdsouza/zoxide) (smart cd), [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
-- **Apps**: [Alfred](https://www.alfredapp.com/), [Rectangle](https://rectangleapp.com/), [JetBrains Toolbox](https://www.jetbrains.com/toolbox-app/), GPG Suite, YubiKey Manager
+- **Window management**: [Rectangle](https://rectangleapp.com/) for tiling and snapping windows with keyboard shortcuts
+- **Apps**: [Alfred](https://www.alfredapp.com/), [JetBrains Toolbox](https://www.jetbrains.com/toolbox-app/), GPG Suite
 - **Speech-to-text**: [Hex](https://github.com/kitlangton/hex) for dictating prompts to Claude Code and other tools
 
 ### [`zsh/.zshrc`](zsh/.zshrc)
